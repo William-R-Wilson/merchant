@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Merchant</title>
+  <title>Foodworks - Products: <%= controller.action_name %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div class="wrapper">
+    <div class="header">
+      <h1>Foodworks</h1>
+      <p>Your Online Grocery</p>
+    </div>
+    
+    <p style="color: green"><%= flash[:notice] %></p>
+    
+    <div class="sidebar">
+      (sidebar)
+    </div>
+    
+    <div class="main">
+      <%= yield %>
+    </div>
+    
+    <div class="footer">
+      Foodworks Online Grocery<br />
+      A Rails Jumpstart Project
+    </div>
+  </div>
 
 </body>
 </html>
