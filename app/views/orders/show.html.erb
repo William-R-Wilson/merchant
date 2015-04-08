@@ -25,7 +25,9 @@
       <td><%= print_price(item.product.price) %></td>
       <td><%= print_price(item.subtotal) %></td>
       <td><%= print_price(@order.total) %></td>
+      <td><%= link_to "delete", item, method: :delete, data: { confirm: "Are you sure you want to delete this item from the order?" } %></td>
     </tr>
       
   <% end %>
+  <%= link_to "Delete order", @order, method: :delete, data: { confirm: "Are you sure?" } %>
 </table>

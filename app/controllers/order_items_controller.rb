@@ -41,7 +41,7 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item.destroy
     respond_to do |format|
-      format.html { redirect_to order_items_url, notice: 'Order item was successfully destroyed.' }
+      format.html { redirect_to @order_item.order, notice: 'Order item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -58,9 +58,10 @@ class OrderItemsController < ApplicationController
     end
     
     def load_order
-      @order = Order.find_or_initialize_by(status: "unsubmitted") #this is based on solution found here: https://github.com/cpflores/merchant/blob/master/app/controllers/order_items_controller.rb
-      if @order.new_record?                                       #not sure this is going to work properly
-        @order.save!
+      begin
+        @order = Order.find(session[:order_id])
+      rescue ActiveRecord::RecordNotFound
+        @order = Order.create(status: "unsubmitted")
         session[:order_id] = @order.id
       end
     end
