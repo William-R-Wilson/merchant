@@ -5,6 +5,11 @@ class OrderItemsController < ApplicationController
   # GET /order_items/1/edit
   def edit
   end
+  
+  def index
+    @order_items = OrderItem.all
+  end
+  
 
   # POST /order_items
   # POST /order_items.json

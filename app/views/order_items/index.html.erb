@@ -1,0 +1,6 @@
+ <% @order_items.each do |item| %>
+ <ul>
+<li><%= image_tag "products/#{item.product.image_url}" %>
+<%= item.product.title %></li>
+</ul>
+<% end %>
