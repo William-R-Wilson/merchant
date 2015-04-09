@@ -14,10 +14,13 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    @order_item = @order.order_items.new(quantity: 1, product_id: params[:product_id])
-
+    
+    @order_item = Order.order_item.find_by(product_id: product.id)
+   
     respond_to do |format|
+      @order_item.quantity += 1
       if @order_item.save
+        
         format.html { redirect_to @order, notice: 'Successfully added product to cart.' }
         format.json { render :show, status: :created, location: @order_item }
       else

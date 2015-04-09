@@ -1,28 +1,5 @@
-== README
+Rails tutorial to build a merchant website with ordering functionality
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+http://tutorials.jumpstartlab.com/projects/merchant.html
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The tutorial was written using an older version of rails and seems to be broken, I'm currently trying to update methods to get it to work properly. 
